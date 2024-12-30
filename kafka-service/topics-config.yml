@@ -1,0 +1,61 @@
+topics:
+  # Translation service topics
+  - name: translation-requests
+    partitions: 6
+    replication-factor: 3
+    configs:
+      retention.ms: 604800000  # 7 days
+      cleanup.policy: delete
+      min.insync.replicas: 2
+      
+  - name: translation-responses
+    partitions: 6
+    replication-factor: 3
+    configs:
+      retention.ms: 604800000  # 7 days
+      cleanup.policy: delete
+      min.insync.replicas: 2
+
+  # Summary service topics
+  - name: summarization-requests
+    partitions: 4
+    replication-factor: 3
+    configs:
+      retention.ms: 604800000  # 7 days
+      cleanup.policy: delete
+      min.insync.replicas: 2
+      
+  - name: summarization-responses
+    partitions: 4
+    replication-factor: 3
+    configs:
+      retention.ms: 604800000  # 7 days
+      cleanup.policy: delete
+      min.insync.replicas: 2
+
+  # User events topic
+  - name: user-events
+    partitions: 2
+    replication-factor: 2
+    configs:
+      retention.ms: 2592000000  # 30 days
+      cleanup.policy: delete
+      min.insync.replicas: 2
+
+  # System metrics topic
+  - name: system-metrics
+    partitions: 3
+    replication-factor: 2
+    configs:
+      retention.ms: 86400000  # 1 day
+      cleanup.policy: delete
+      min.insync.replicas: 2
+
+  # Dead letter queue
+  - name: dead-letter-queue
+    partitions: 1
+    replication-factor: 2
+    configs:
+      retention.ms: 1209600000  # 14 days
+      cleanup.policy: delete
+      min.insync.replicas: 2

@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding: 8px !important;
+  }
+  
+  .MuiPaper-root {
+    padding: 16px !important;
+  }
+}
+
+/* RTL support */
+[dir="rtl"] .MuiTextField-root {
+  text-align: right;
+}
+
+/* Dropzone styles */
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropzone:hover {
+  border-color: #1976d2;
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+/* Animation for loading states */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 600px) {
+  .MuiButtonBase-root {
+    min-height: 48px;
+  }
+  
+  .MuiIconButton-root {
+    padding: 12px;
+  }
+}
